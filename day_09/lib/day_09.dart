@@ -58,7 +58,7 @@ class Sprite {
       return 'North';
     }
   }
-  void changedirrandom(int direction){
+  void changedirrandom(this.direction == random){
 
   }
 }
