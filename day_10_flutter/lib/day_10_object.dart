@@ -36,6 +36,7 @@ class Animal {
   }
 }
 
+
 class Hero {
   Hero({required int level, required String type}){
     this.level = 0;
