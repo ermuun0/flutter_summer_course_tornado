@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wordfind_app/Gradient_letter.dart';
+import 'package:wordfind_app/gradient_text.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -15,24 +16,27 @@ class WelcomePage extends StatelessWidget {
             fit: BoxFit.cover,
           )),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Padding(
-                padding: EdgeInsets.only(top: 200),
-                child: Expanded(
-                  child: Column(
-                   children: [
-                     Row(
-                       children: [
-                         GradientLetter('W'),
-                         GradientLetter('O'),
-                         GradientLetter('R'),
-                         GradientLetter('D'),
-                         MainAxisAlignment.center
-                       ],
-                     )
-                   ],
-                  ),
+              const Padding(padding: EdgeInsets.only(top: 200)),
+              Expanded(
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        GradientLetter('W'),
+                        GradientLetter('O'),
+                        GradientLetter('R'),
+                        GradientLetter('D'),
+                        GradientText('game', 31.6),
+                      ],
+                      mainAxisAlignment: MainAxisAlignment.center,
+                    ),
+                  ],
                 ),
+              ),
+              Expanded(
+                child: GradientText('READY?', 25.0),
               )
             ],
           ),
