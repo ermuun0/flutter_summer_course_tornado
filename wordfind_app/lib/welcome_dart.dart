@@ -12,7 +12,7 @@ class WelcomePage extends StatelessWidget {
         body: Container(
           decoration: BoxDecoration(
               image: DecorationImage(
-            image: AssetImage('back1.png'),
+            image: AssetImage('assets/back1.png'),
             fit: BoxFit.cover,
           )),
           child: Column(
@@ -35,6 +35,7 @@ class WelcomePage extends StatelessWidget {
                   ],
                 ),
               ),
+              Image.asset('assets/iCodeGuy.png'),
               Expanded(
                 child: GradientText('READY?', 25.0),
               )
