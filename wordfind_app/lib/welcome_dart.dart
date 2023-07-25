@@ -28,10 +28,10 @@ class WelcomePage extends StatelessWidget {
                         GradientLetter('O'),
                         GradientLetter('R'),
                         GradientLetter('D'),
-                        GradientText('game', 31.6),
                       ],
                       mainAxisAlignment: MainAxisAlignment.center,
                     ),
+                    GradientText('game', 31.6)
                   ],
                 ),
               ),
@@ -41,34 +41,31 @@ class WelcomePage extends StatelessWidget {
             ],
           ),
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: Container(
-            width: 310,
-            height: 60,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Color(0xFFE86B02), Color(0xFFFA9541)],
-                begin: Alignment.centerLeft,
-                end: Alignment.centerRight,
-              ),
-              borderRadius: BorderRadius.circular(25),
+        floatingActionButton: Container(
+          width: 310,
+          height: 60,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Color(0xFFE86B02), Color(0xFFFA9541)],
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
             ),
-            child: ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.transparent,
-                  elevation: 0,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25),
-                  )),
-              child: Text(
-                'PLAY',
-                style: TextStyle(
-                  fontFamily: 'Nunito',
-                  fontSize: 24,
-                  fontWeight: FontWeight.w700,
-                ),
+            borderRadius: BorderRadius.circular(25),
+          ),
+          child: ElevatedButton(
+            onPressed: () {},
+            style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.transparent,
+                elevation: 0,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25),
+                )),
+            child: Text(
+              'PLAY',
+              style: TextStyle(
+                fontFamily: 'Nunito',
+                fontSize: 24,
+                fontWeight: FontWeight.w700,
               ),
             ),
           ),
