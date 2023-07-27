@@ -5,8 +5,10 @@ class GradientLetter extends StatelessWidget{
    final double height;
    final double fontSize;
    final double hEight;
+   final double borderRadius;
+   final double borderradius;
 
-  const GradientLetter(this.letter, this.height, this.width, this.fontSize, this.hEight,{super.key});
+  const GradientLetter(this.letter, this.height, this.width, this.fontSize, this.hEight, this.borderRadius, this.borderradius, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ class GradientLetter extends StatelessWidget{
      width: width,
      height: height,
      decoration: BoxDecoration(
-       borderRadius: BorderRadius.circular(16),
+       borderRadius: BorderRadius.circular(borderRadius),
        color:  Color(0xFFFF9002)
 
      ),
@@ -23,7 +25,7 @@ class GradientLetter extends StatelessWidget{
        heightFactor: 2/3,
        child: Container(
          decoration: BoxDecoration(
-           borderRadius: BorderRadius.circular(8),
+           borderRadius: BorderRadius.circular(borderradius),
            gradient: const LinearGradient(
                colors: [Color.fromRGBO(255,144,2,0), Color(0xFFE48000)],
            begin: Alignment.topLeft,

@@ -25,10 +25,10 @@ class WelcomePage extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        GradientLetter('W' , 60 , 60, 32, 52/38),
-                        GradientLetter('O', 60, 60, 32, 52/38),
-                        GradientLetter('R',60, 60, 32, 52/38),
-                        GradientLetter('D', 60, 60, 32, 52/38),
+                        GradientLetter('W' , 60 , 60, 32, 52/38,16, 8 ),
+                        GradientLetter('O', 60, 60, 32, 52/38,16, 8 ),
+                        GradientLetter('R',60, 60, 32, 52/38, 16, 8 ),
+                        GradientLetter('D', 60, 60, 32, 52/38, 16, 8 ),
                       ],
                       mainAxisAlignment: MainAxisAlignment.center,
                     ),
