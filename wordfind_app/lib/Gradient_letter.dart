@@ -3,8 +3,10 @@ class GradientLetter extends StatelessWidget{
   final String letter;
    final double width;
    final double height;
+   final double fontSize;
+   final double hEight;
 
-  const GradientLetter(this.letter, this.height, this.width, {super.key});
+  const GradientLetter(this.letter, this.height, this.width, this.fontSize, this.hEight,{super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,7 @@ class GradientLetter extends StatelessWidget{
          child: Center(
            child: Text(
              letter,
-             style: TextStyle(fontSize: 32, height: 52/38, color: Colors.white),
+             style: TextStyle(fontSize: fontSize, height: hEight, color: Colors.white),
            ),
          ),
        ),
