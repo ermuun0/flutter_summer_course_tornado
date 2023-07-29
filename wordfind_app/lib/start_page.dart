@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:wordfind_app/Game.dart';
 import 'package:wordfind_app/Gradient_letter.dart';
 import 'package:wordfind_app/gradient_text.dart';
+import 'package:wordfind_app/input_field.dart';
 import 'package:wordfind_app/welcome_dart.dart';
+
 
 
 class StartPage extends StatelessWidget {
@@ -36,7 +38,7 @@ class StartPage extends StatelessWidget {
             )),
             child: Column(
               children: [
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     GradientLetter('W', 30, 30, 16, 13 / 9, 8, 4),
@@ -45,39 +47,22 @@ class StartPage extends StatelessWidget {
                     GradientLetter('D', 30, 30, 16, 13 / 9, 8, 4),
                   ],
                 ),
-                GradientText('game', 18.3),
-                Padding(padding: EdgeInsets.only(top: 90)),
+                const GradientText('game', 18.3),
+                const Padding(padding: EdgeInsets.only(top: 90)),
                 Image.asset('assets/iCodeGuyHead.png'),
-                Padding(padding: EdgeInsets.only(top: 29.7)),
-                GradientText('Player name', 22.0),
-                Container(
-                  width:310,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(25)
-                  ),
-                  child: const TextField(
-                    decoration: InputDecoration(
-                        floatingLabelBehavior: FloatingLabelBehavior.never,
-                        border: InputBorder.none,
-                        labelText: 'Type here',
+                const Padding(padding: EdgeInsets.only(top: 29.7)),
+                const GradientText('Player name', 22.0),
+                InputField(),
+                StartButton(),
 
-                      labelStyle: TextStyle(
-                        fontWeight:FontWeight.w600,
-                        fontSize: 18,
-                        fontFamily: 'Nunito',
-                        color: Color(0xFFFA9541)
-                      )
-                    ),
-                  ),
-                )
               ],
             ),
           ),
         ),
       ),
+
     );
+    
   }
 }
 class StartButton extends StatelessWidget {
