@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:wordfind_app/Game.dart';
 import 'package:wordfind_app/Gradient_letter.dart';
 import 'package:wordfind_app/gradient_text.dart';
 import 'package:wordfind_app/welcome_dart.dart';
 
+
 class StartPage extends StatelessWidget {
-  const StartPage({super.key});
+
+  const StartPage(  {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -56,8 +59,10 @@ class StartPage extends StatelessWidget {
                   ),
                   child: const TextField(
                     decoration: InputDecoration(
+                        floatingLabelBehavior: FloatingLabelBehavior.never,
                         border: InputBorder.none,
                         labelText: 'Type here',
+
                       labelStyle: TextStyle(
                         fontWeight:FontWeight.w600,
                         fontSize: 18,
@@ -71,6 +76,52 @@ class StartPage extends StatelessWidget {
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+class StartButton extends StatelessWidget {
+  const StartButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 310,
+      height: 60,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Color(0xFFE86B02),
+            Color(0xFFFA9541)
+          ],
+          begin: Alignment.centerLeft,
+          end: Alignment.centerRight,
+        ),
+borderRadius: BorderRadius.circular(25),
+
+      ),
+      child: ElevatedButton(
+        onPressed: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const Game()),
+          );
+        },
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(25),
+          )
+        ),
+        child: Text(
+          'Start',
+          style: TextStyle(
+            fontFamily: 'Nunito',
+            fontSize: 24,
+            fontWeight: FontWeight.w700
+          ),
+        ),
+
       ),
     );
   }
