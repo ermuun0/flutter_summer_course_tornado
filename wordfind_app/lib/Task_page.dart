@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:wordfind_app/Gradient_letter.dart';
-import 'package:wordfind_app/Task_page.dart';
 import 'package:wordfind_app/gradient_text.dart';
 import 'package:wordfind_app/welcome_dart.dart';
 
-class Game extends StatelessWidget {
-  const Game({super.key});
+class TaskPage extends StatelessWidget {
+  const TaskPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -55,29 +54,30 @@ class Game extends StatelessWidget {
               ),
               Padding(padding: EdgeInsets.only(top:31)),
               Text('0/10',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w400,
-                color: Color(0xFFFA9541)
-              ),
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xFFFA9541)
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Image.asset('assets/previous 1.png'),
-                  Image.asset('assets/IMG.png'),
-        IconButton(onPressed: () {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => const TaskPage()));},
-          icon:  Image.asset('assets/previous 2.png'),),
-
+                  IconButton(onPressed: () {
+                    Navigator.of(context).pop();
+                  }, icon: Image.asset('assets/arrow_back.png')),
+                  Image.asset('assets/Elsa.png'),
+                  IconButton(onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const TaskPage()));
+                  }, icon: Image.asset('assets/previous 2.png'),)
                 ],
               ),
               Padding(padding: EdgeInsets.only(top: 27)),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  for (int i = 0; i < 6; i++)
-                  GradientLetter('' , 60 , 60, 32, 52/38,16, 8 ),
+                  for (int i = 0; i < 4; i++)
+                    GradientLetter('' , 60 , 60, 32, 52/38,16, 8 ),
 
                 ],
               )
