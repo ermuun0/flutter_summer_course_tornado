@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:wordfind_app/Gradient_letter.dart';
 import 'package:wordfind_app/Task_page.dart';
 import 'package:wordfind_app/gradient_text.dart';
+import 'package:wordfind_app/start_page.dart';
+import 'package:wordfind_app/taske_page1.dart';
 import 'package:wordfind_app/welcome_dart.dart';
+import 'input_field.dart';
+import 'user.dart';
 
 class Game extends StatelessWidget {
   const Game({super.key});
@@ -25,7 +29,7 @@ class Game extends StatelessWidget {
                           Navigator.of(context).pop();
                         }),
                     Text(
-                      'SRA',
+                     '$guest',
                       style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.w400,
@@ -67,7 +71,7 @@ class Game extends StatelessWidget {
                   Image.asset('assets/previous 1.png'),
                   Image.asset('assets/IMG.png'),
         IconButton(onPressed: () {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => const TaskPage()));},
+      Navigator.push(context, MaterialPageRoute(builder: (context) => const Task()));},
           icon:  Image.asset('assets/previous 2.png'),),
 
                 ],

@@ -1,16 +1,21 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:wordfind_app/Game.dart';
+import 'package:wordfind_app/Task_Page.dart';
 import 'package:wordfind_app/Gradient_letter.dart';
 import 'package:wordfind_app/gradient_text.dart';
 import 'package:wordfind_app/input_field.dart';
 import 'package:wordfind_app/welcome_dart.dart';
+import 'user.dart';
+User guest = User('Guest', 0);
+class StartPage extends StatefulWidget {
 
+  StartPage({super.key});
 
+  @override
+  State<StartPage> createState() => _StartPageState();
+}
 
-class StartPage extends StatelessWidget {
-
-  const StartPage(  {super.key});
-
+class _StartPageState extends State<StartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,19 +57,29 @@ class StartPage extends StatelessWidget {
                 Image.asset('assets/iCodeGuyHead.png'),
                 const Padding(padding: EdgeInsets.only(top: 29.7)),
                 const GradientText('Player name', 22.0),
-                InputField(),
+                InputField(
+                  onSubmitted: _createUser,
+                ),
                 StartButton(),
-
               ],
             ),
           ),
         ),
       ),
-
     );
-    
+  }
+
+  void _createUser(String userName) {
+    setState(() {
+      guest.userName = userName;
+    });
+
+      print(guest.userName);
+      print(guest.score);
+
   }
 }
+
 class StartButton extends StatelessWidget {
   const StartButton({super.key});
 
@@ -75,38 +90,30 @@ class StartButton extends StatelessWidget {
       height: 60,
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [Color(0xFFE86B02),
-            Color(0xFFFA9541)
-          ],
+          colors: [Color(0xFFE86B02), Color(0xFFFA9541)],
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
         ),
-borderRadius: BorderRadius.circular(25),
-
+        borderRadius: BorderRadius.circular(25),
       ),
       child: ElevatedButton(
-        onPressed: (){
+        onPressed: () {
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => const Game()),
           );
         },
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(25),
-          )
-        ),
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(25),
+            )),
         child: Text(
           'Start',
           style: TextStyle(
-            fontFamily: 'Nunito',
-            fontSize: 24,
-            fontWeight: FontWeight.w700
-          ),
+              fontFamily: 'Nunito', fontSize: 24, fontWeight: FontWeight.w700),
         ),
-
       ),
     );
   }
