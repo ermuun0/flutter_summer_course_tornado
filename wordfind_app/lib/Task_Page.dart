@@ -84,6 +84,19 @@ class Game extends StatelessWidget {
                   GradientLetter('' , 60 , 60, 32, 52/38,16, 8 ),
 
                 ],
+              ),
+              Padding(padding: EdgeInsets.only(top: 57)),
+              Container(
+                width: 375,
+                height: 197  ,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(24),
+                  color:   Color(0xFFFFFFFF)
+
+                ),
+                child: Row(
+
+                ),
               )
 
             ],

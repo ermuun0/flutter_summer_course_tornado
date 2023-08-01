@@ -64,8 +64,8 @@ class Task extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Image.asset('assets/previous 1.png'),
-                  Image.asset('assets/IMG.png'),
+                  IconButton(onPressed: (){Navigator.of(context).pop();}, icon: Image.asset('assets/previous 1.png'),),
+                  Image.asset('assets/Elsa.png'),
                   IconButton(onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => const Task()));},
                     icon:  Image.asset('assets/previous 2.png'),),
@@ -76,7 +76,7 @@ class Task extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  for (int i = 0; i < 6; i++)
+                  for (int i = 0; i < 4; i++)
                     GradientLetter('' , 60 , 60, 32, 52/38,16, 8 ),
 
                 ],
