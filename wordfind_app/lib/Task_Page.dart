@@ -85,10 +85,18 @@ class Game extends StatelessWidget {
 
                 ],
               ),
+              Padding(padding: EdgeInsets.only(top: 10)),
+              Text('Hint',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w700,
+                color: Color(0xFFFA9541)
+              ),
+              ),
               Padding(padding: EdgeInsets.only(top: 57)),
               Container(
-                width: 375,
-                height: 197  ,
+                width: 401,
+                height: 247 ,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(24),
                   color:   Color(0xFFFFFFFF)
