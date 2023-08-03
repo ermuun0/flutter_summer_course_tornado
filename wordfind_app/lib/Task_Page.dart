@@ -8,9 +8,14 @@ import 'package:wordfind_app/welcome_dart.dart';
 import 'input_field.dart';
 import 'user.dart';
 
-class Game extends StatelessWidget {
+class Game extends StatefulWidget {
   const Game({super.key});
 
+  @override
+  State<Game> createState() => _GameState();
+}
+
+class _GameState extends State<Game> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +34,7 @@ class Game extends StatelessWidget {
                           Navigator.of(context).pop();
                         }),
                     Text(
-                     '$guest',
+                      '$guest',
                       style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.w400,
@@ -59,20 +64,20 @@ class Game extends StatelessWidget {
               ),
               Padding(padding: EdgeInsets.only(top:31)),
               Text('0/10',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w400,
-                color: Color(0xFFFA9541)
-              ),
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xFFFA9541)
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Image.asset('assets/previous 1.png'),
                   Image.asset('assets/IMG.png'),
-        IconButton(onPressed: () {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => const Task()));},
-          icon:  Image.asset('assets/previous 2.png'),),
+                  IconButton(onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const Task()));},
+                    icon:  Image.asset('assets/previous 2.png'),),
 
                 ],
               ),
@@ -81,25 +86,25 @@ class Game extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   for (int i = 0; i < 6; i++)
-                  GradientLetter('' , 60 , 60, 32, 52/38,16, 8 ),
+                    GradientLetter('' , 60 , 60, 32, 52/38,16, 8 ),
 
                 ],
               ),
               Padding(padding: EdgeInsets.only(top: 10)),
               Text('Hint',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w700,
-                color: Color(0xFFFA9541)
-              ),
+                style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w700,
+                    color: Color(0xFFFA9541)
+                ),
               ),
               Padding(padding: EdgeInsets.only(top: 57)),
               Container(
                 width: 401,
                 height: 247 ,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(24),
-                  color:   Color(0xFFFFFFFF)
+                    borderRadius: BorderRadius.circular(24),
+                    color:   Color(0xFFFFFFFF)
 
                 ),
                 child: Row(
@@ -112,3 +117,4 @@ class Game extends StatelessWidget {
         ));
   }
 }
+
