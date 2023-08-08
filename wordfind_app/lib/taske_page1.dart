@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wordfind_app/Gradient_letter.dart';
-import 'package:wordfind_app/Task_page.dart';
+import 'package:wordfind_app/gradient_letter.dart';
+import 'package:wordfind_app/task_page.dart';
 import 'package:wordfind_app/gradient_text.dart';
 import 'package:wordfind_app/welcome_dart.dart';
 

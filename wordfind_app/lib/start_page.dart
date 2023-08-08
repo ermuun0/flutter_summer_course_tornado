@@ -1,15 +1,17 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:wordfind_app/Task_Page.dart';
-import 'package:wordfind_app/Gradient_letter.dart';
+import 'package:wordfind_app/task_page.dart';
+import 'package:wordfind_app/gradient_letter.dart';
 import 'package:wordfind_app/gradient_text.dart';
 import 'package:wordfind_app/input_field.dart';
 import 'package:wordfind_app/welcome_dart.dart';
-import 'user.dart';
-User guest = User('Guest', 0);
-class StartPage extends StatefulWidget {
+import 'model/user.dart';
+import 'model/char_model.dart';
+import 'model/task_model.dart';
 
-  StartPage({super.key});
+User newUser = User('Guest', 0);
+
+class StartPage extends StatefulWidget {
+  const StartPage({super.key});
 
   @override
   State<StartPage> createState() => _StartPageState();
@@ -27,7 +29,9 @@ class _StartPageState extends State<StartPage> {
               icon: Image.asset('assets/arrow_back.png'),
               onPressed: () {
                 Navigator.of(context).pop();
+                newUser = User ('Guest', 0);
               },
+
             ),
           ],
         ),
@@ -38,9 +42,9 @@ class _StartPageState extends State<StartPage> {
           child: Container(
             decoration: BoxDecoration(
                 image: DecorationImage(
-              image: AssetImage('assets/back2.png'),
-              fit: BoxFit.cover,
-            )),
+                  image: AssetImage('assets/back2.png'),
+                  fit: BoxFit.cover,
+                )),
             child: Column(
               children: [
                 const Row(
@@ -57,50 +61,55 @@ class _StartPageState extends State<StartPage> {
                 Image.asset('assets/iCodeGuyHead.png'),
                 const Padding(padding: EdgeInsets.only(top: 29.7)),
                 const GradientText('Player name', 22.0),
-                InputField(
-                  onSubmitted: _createUser,
-                ),
-                StartButton(),
+                InputField(  onSubmitted: _createUser,),
+                StartButton(newUser),
+
               ],
             ),
           ),
         ),
       ),
-    );
-  }
 
+    );
+
+  }
   void _createUser(String userName) {
     setState(() {
-      guest.userName = userName;
+      newUser.userName = userName;
     });
 
-      print(guest.userName);
-      print(guest.score);
+    print(newUser.userName);
+    print(newUser.score);
 
   }
 }
-
 class StartButton extends StatelessWidget {
-  const StartButton({super.key});
+  final User newUser;
+  const StartButton(this.newUser ,{super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    if (newUser.userName == 'Guest') {
+      return Container();
+    }else { return Container(
       width: 310,
       height: 60,
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [Color(0xFFE86B02), Color(0xFFFA9541)],
+          colors: [Color(0xFFE86B02),
+            Color(0xFFFA9541)
+          ],
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
         ),
         borderRadius: BorderRadius.circular(25),
+
       ),
       child: ElevatedButton(
-        onPressed: () {
+        onPressed: (){
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const Game()),
+            MaterialPageRoute(builder: (context) => Game(newUser)),
           );
         },
         style: ElevatedButton.styleFrom(
@@ -108,13 +117,19 @@ class StartButton extends StatelessWidget {
             elevation: 0,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(25),
-            )),
+            )
+        ),
         child: Text(
           'Start',
           style: TextStyle(
-              fontFamily: 'Nunito', fontSize: 24, fontWeight: FontWeight.w700),
+              fontFamily: 'Nunito',
+              fontSize: 24,
+              fontWeight: FontWeight.w700
+          ),
         ),
+
       ),
-    );
+    );}
+
   }
 }
