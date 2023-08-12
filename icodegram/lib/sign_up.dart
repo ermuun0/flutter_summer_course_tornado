@@ -1,55 +1,52 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:icodegram/home_screen.dart';
 import 'package:icodegram/input_field_1.dart';
+import 'package:icodegram/login.dart';
 
-import 'package:icodegram/sign_up.dart';
+class SignUp extends StatelessWidget {
+  const SignUp({super.key});
 
-class Login extends StatefulWidget {
-  const Login({super.key});
-
-  @override
-  State<Login> createState() => _LoginState();
-}
-
-class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      // backgroundColor: Color(0x121212),
       body: SafeArea(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Padding(padding: EdgeInsets.only(top: 160)),
-            Center(
-              child: Text(
-                'iCodegram',
-                style: TextStyle(
-                    fontFamily: 'Lobster',
-                    fontSize: 36,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.white),
-              ),
+            Text(
+              'iCodegram',
+              style: TextStyle(
+                  fontFamily: 'Lobster',
+                  fontSize: 36,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.white),
             ),
             Padding(padding: EdgeInsets.only(top: 52)),
-            Expanded(
-              child: InputField1(text: 'Нэвтрэх нэр', hintText : 'Temi'),
-              flex: 0,
+            InputField1(
+              text: 'Утасны дугаар',
+              hintText: 'hi',
             ),
             Padding(padding: EdgeInsets.only(top: 14)),
-            Expanded(
-              child: InputField1(text: 'Password', obscureText: true, hintText : 'Put ur passwotd'),
-              flex: 0,
+            InputField1(
+              text: 'Хэрэглэгчийн нэр',
+              hintText: 'hi',
+            ),
+            Padding(padding: EdgeInsets.only(top: 14)),
+            InputField1(
+              text: 'Нууц үг',
+              hintText: 'hi',
+              obscureText: true,
+            ),
+            Padding(padding: EdgeInsets.only(top: 14)),
+            InputField1(
+              text: 'Нууц үг давтах',
+              hintText: 'hir',
+              obscureText: true,
             ),
             Padding(padding: EdgeInsets.only(top: 48)),
             GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => HomeScreen())
-                );
-              },
+              onTap: () {},
               child: Container(
                 width: 343,
                 height: 45,
@@ -59,7 +56,7 @@ class _LoginState extends State<Login> {
                 ),
                 child: Center(
                   child: Text(
-                    "Нэвтрэх",
+                    "Бүртгүүлэх",
                     style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
@@ -80,8 +77,9 @@ class _LoginState extends State<Login> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+
                 Text(
-                  "Шинэ хэрэглэгч үү?",
+                  "Бүртгэлтэй юу?",
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
@@ -92,23 +90,20 @@ class _LoginState extends State<Login> {
                   width: 8,
                 ),
                 GestureDetector(
-
-                  onTap: (){
-                    Navigator.push(
-                        (context),
-                      MaterialPageRoute(builder: (context) => SignUp())
-                    );
+                  onTap: () {
+                    Navigator.pop(context);
                     print('aa');
                   },
                   child: Text(
-                    "Бүртгүүлэх",
+                    "Нэвтрэх",
                     style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 14,
                         foreground: Paint()
-                          ..shader = LinearGradient(
-                                  colors: [Color(0xffE86B02), Color(0xffFA9541)])
-                              .createShader(Rect.fromLTWH(0, 0, 200.0, 70.0))),
+                          ..shader = LinearGradient(colors: [
+                            Color(0xffE86B02),
+                            Color(0xffFA9541)
+                          ]).createShader(Rect.fromLTWH(0, 0, 200.0, 70.0))),
                   ),
                 )
               ],
