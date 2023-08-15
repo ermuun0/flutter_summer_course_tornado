@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:icodegram/home_screen.dart';
 import 'package:icodegram/input_field_1.dart';
-
 import 'package:icodegram/sign_up.dart';
 
 class Login extends StatefulWidget {
@@ -13,6 +12,8 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,12 +35,12 @@ class _LoginState extends State<Login> {
             ),
             Padding(padding: EdgeInsets.only(top: 52)),
             Expanded(
-              child: InputField1(text: 'Нэвтрэх нэр', hintText : 'Temi'),
+              child: InputField1(text: 'Нэвтрэх нэр', hintText : 'Temi', editingController: _usernameController, textInputType: TextInputType.text,),
               flex: 0,
             ),
             Padding(padding: EdgeInsets.only(top: 14)),
             Expanded(
-              child: InputField1(text: 'Password', obscureText: true, hintText : 'Put ur passwotd'),
+              child: InputField1(text: 'Password', obscureText: true, hintText : 'Put ur passwotd', editingController: _passwordController, textInputType: TextInputType.text,),
               flex: 0,
             ),
             Padding(padding: EdgeInsets.only(top: 48)),

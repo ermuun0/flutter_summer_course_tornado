@@ -8,25 +8,25 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: SafeArea(
         child: Column(
+          // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 16),
-              child: Text('iCodegram',
-              style: TextStyle(
-                fontFamily: 'Lobster',
-                fontWeight: FontWeight.w400,
-                fontSize: 26,
-                color: Colors.white,
-              ),
-              ),
+            Row(mainAxisAlignment: MainAxisAlignment.start,children:   [Text(
+                'iCodegram',
+                style: TextStyle(
+                  fontFamily: 'Lobster',
+                  fontWeight: FontWeight.w400,
+                  fontSize: 26,
+                  color: Colors.white,
+                ),)]
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 AddButton(),
-Story('Төгөлдөр'),
+                Story('Төгөлдөр'),
                 Story('Сарнай'),
                 Story('Ханхүү')
               ],

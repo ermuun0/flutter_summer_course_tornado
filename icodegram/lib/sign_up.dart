@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:icodegram/input_field_1.dart';
 import 'package:icodegram/login.dart';
+import 'package:icodegram/resources/auth_methods.dart';
 
-class SignUp extends StatelessWidget {
+class SignUp extends StatefulWidget {
   const SignUp({super.key});
 
+  @override
+  State<SignUp> createState() => _SignUpState();
+}
+
+class _SignUpState extends State<SignUp> {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _validatePasswordController =
+      TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,29 +35,42 @@ class SignUp extends StatelessWidget {
             ),
             Padding(padding: EdgeInsets.only(top: 52)),
             InputField1(
-              text: 'Утасны дугаар',
+              text: 'Хэрэглэгчийн И-мэйл',
               hintText: 'hi',
+              editingController: _emailController,
+              textInputType: TextInputType.emailAddress,
             ),
             Padding(padding: EdgeInsets.only(top: 14)),
             InputField1(
               text: 'Хэрэглэгчийн нэр',
               hintText: 'hi',
+              editingController: _usernameController,
+              textInputType: TextInputType.text,
             ),
             Padding(padding: EdgeInsets.only(top: 14)),
             InputField1(
               text: 'Нууц үг',
               hintText: 'hi',
               obscureText: true,
+              editingController: _passwordController,
+              textInputType: TextInputType.text,
             ),
             Padding(padding: EdgeInsets.only(top: 14)),
             InputField1(
               text: 'Нууц үг давтах',
               hintText: 'hir',
               obscureText: true,
+              editingController: _validatePasswordController,
+              textInputType: TextInputType.text,
             ),
             Padding(padding: EdgeInsets.only(top: 48)),
             GestureDetector(
-              onTap: () {},
+              onTap: () => {
+                AuthMethods().signUpUser(
+                    email: _emailController.text,
+                    password: _passwordController.text,
+                    username: _usernameController.text)
+              },
               child: Container(
                 width: 343,
                 height: 45,
@@ -77,7 +101,6 @@ class SignUp extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-
                 Text(
                   "Бүртгэлтэй юу?",
                   style: TextStyle(
