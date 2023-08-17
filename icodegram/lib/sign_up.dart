@@ -69,25 +69,31 @@ class _SignUpState extends State<SignUp> {
                 AuthMethods().signUpUser(
                     email: _emailController.text,
                     password: _passwordController.text,
-                    username: _usernameController.text)
-              },
-              child: Container(
-                width: 343,
-                height: 45,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      colors: [Color(0xffE86B02), Color(0xffFA9541)]),
-                ),
-                child: Center(
-                  child: Text(
-                    "Бүртгүүлэх",
-                    style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.white),
+                    username: _usernameController.text),
+                if(_emailController.text.isNotEmpty){
+                   Container(
+                    width: 343,
+                    height: 45,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          colors: [Color(0xffE86B02), Color(0xffFA9541)]),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Бүртгүүлэх",
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.white),
+                      ),
+                    ),
                   ),
-                ),
-              ),
+                }else{
+
+                }
+
+              },
+
             ),
             Padding(padding: EdgeInsets.only(top: 26)),
             Text(
