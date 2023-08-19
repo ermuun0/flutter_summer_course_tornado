@@ -4,11 +4,11 @@ import 'package:firebase_core/firebase_core.dart';
 
 class InputField1 extends StatefulWidget {
   final String text;
-  final String hintText;
+
   final bool obscureText;
   final TextEditingController editingController;
   final TextInputType textInputType;
-  const InputField1( {super.key, required this.text, this.obscureText = false, required this.hintText, required this.editingController, required this.textInputType});
+  const InputField1( {super.key, required this.text, this.obscureText = false,  required this.editingController, required this.textInputType});
 
   @override
   State<InputField1> createState() => _InputField1State();
@@ -31,7 +31,7 @@ class _InputField1State extends State<InputField1> {
         ),
         decoration: InputDecoration(
           hintStyle: TextStyle(color: Color(0xFFA0A0A0)),
-          hintText: widget.hintText,
+
           floatingLabelBehavior: FloatingLabelBehavior.never,
           labelText: widget.text,
          labelStyle: TextStyle(

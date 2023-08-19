@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:icodegram/add_photo.dart';
 import 'package:icodegram/home_screen.dart';
 import 'package:icodegram/login.dart';
 import 'package:icodegram/sign_up.dart';
@@ -13,7 +14,7 @@ void main() async {
     theme: ThemeData(
       scaffoldBackgroundColor: Colors.black
     ),
-    home: Login(),
+    home: AddPhoto(),
   ));
 }
 
