@@ -11,32 +11,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _page = 0;
-  late PageController pageController;
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    pageController=PageController();
-  }
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-    pageController.dispose();
-  }
-  void onPageChanged(
-      int page
-      ){
-    setState(() {
-      _page=page;
-    });
-  }
-  void navigationTapped(
-      int page
-      ){
-    pageController.jumpToPage(page);
-  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  AddButton(),
+                  AddButton( some: 'Нэмэх',),
                   Story('Төгөлдөр'),
                   Story('Сарнай'),
                   Story('Ханхүү')
@@ -67,17 +42,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.black,
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(icon: SvgPicture.asset('assets/home.svg',
-
-            ), label: '',
-
-            ),
-            BottomNavigationBarItem(icon: SvgPicture.asset('assets/add_box.svg'), label: ''),
-            BottomNavigationBarItem(icon: SvgPicture.asset('assets/user.svg'), label: '')
-          ],
-        ));
+       );
   }
 }

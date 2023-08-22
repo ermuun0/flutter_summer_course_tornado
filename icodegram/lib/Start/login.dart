@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:icodegram/home_screen.dart';
+import 'package:icodegram/layout/screen_layout.dart';
+import 'package:icodegram/screen/home_screen.dart';
 import 'package:icodegram/input_field_1.dart';
 import 'package:icodegram/resources/auth_methods.dart';
-import 'package:icodegram/sign_up.dart';
+import 'package:icodegram/Start/sign_up.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -32,7 +33,7 @@ class _LoginState extends State<Login> {
         _isLoading = false;
       });
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => HomeScreen()));
+          context, MaterialPageRoute(builder: (context) => ScreenLayout()));
     } else {
       print('Not logged in');
     }

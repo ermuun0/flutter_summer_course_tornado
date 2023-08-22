@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:icodegram/home_screen.dart';
+import 'package:icodegram/Start/login.dart';
+import 'package:icodegram/layout/screen_layout.dart';
+import 'package:icodegram/screen/home_screen.dart';
 import 'package:icodegram/input_field_1.dart';
 import 'package:icodegram/resources/auth_methods.dart';
 
@@ -51,10 +53,15 @@ class _SignUpState extends State<SignUp> {
   }
 
   void submitData() async {
-    AuthMethods().signUpUser(
+    String result= await AuthMethods().signUpUser(
         email: _emailController.text,
         password: _passwordController.text,
         username: _usernameController.text);
+    if (result == 'success'){
+      Navigator.push(context,MaterialPageRoute(builder: (context) => Login()));
+    }else {
+      print('not success');
+    }
   }
 
   @override
@@ -102,7 +109,7 @@ class _SignUpState extends State<SignUp> {
             ),
             const Padding(padding: EdgeInsets.only(top: 48)),
             InkWell(
-              onTap: isFilled ? () => submitData : null,
+              onTap: isFilled ? submitData : null,
               child: Container(
                 width: 343,
                 height: 45,

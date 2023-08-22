@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:icodegram/home_screen.dart';
+import 'package:icodegram/screen/home_screen.dart';
 
 class AddPhoto extends StatefulWidget {
   const AddPhoto({super.key});
@@ -14,27 +14,29 @@ class _AddPhotoState extends State<AddPhoto> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
+        leading: IconButton(
+          icon: Image.asset('assets/back.png'),
+          onPressed: () {},
+        ),
 
-        title: Center(
-          child: Text(
-              "Зураг оруулах",
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-              )
-          ),
-        ),
-        ),
+        title:  Padding(
+          padding: const EdgeInsets.only(left: 87),
+          child: Text("Зураг оруулах",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+
+
+      )),
+        )),
       body: Container(
         child: Column(
           children: [
-            Stack(
 
-            )
-          ],
+    ]
+
         ),
       ),
-      );
-
+    );
   }
 }

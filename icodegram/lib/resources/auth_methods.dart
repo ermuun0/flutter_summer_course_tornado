@@ -30,6 +30,7 @@ class AuthMethods {
       print('DUUUSLAAA');
     } catch (err) {
       result = err.toString();
+      print(result);
     }
 
     return result;

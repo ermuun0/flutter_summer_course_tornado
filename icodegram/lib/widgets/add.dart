@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AddButton extends StatelessWidget {
-  const AddButton({super.key});
+  final String some;
+  const AddButton({super.key, required this.some, });
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class AddButton extends StatelessWidget {
           ),
         ),
           Text(
-              "Нэмэх",
+              "$some",
               style: TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w400,
