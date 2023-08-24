@@ -6,6 +6,7 @@ import 'package:icodegram/layout/screen_layout.dart';
 import 'package:icodegram/Start/login.dart';
 import 'package:icodegram/Start/sign_up.dart';
 import 'package:icodegram/widgets/add.dart';
+import 'package:icodegram/widgets/post_widget.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,7 +16,7 @@ void main() async {
     theme: ThemeData(
       scaffoldBackgroundColor: Colors.black
     ),
-    home: ScreenLayout(),
+    home: ScreenLayout()
   ));
 }
 

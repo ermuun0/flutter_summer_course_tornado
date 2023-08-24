@@ -5,6 +5,8 @@ import 'package:icodegram/screen/home_screen.dart';
 import 'package:icodegram/input_field_1.dart';
 import 'package:icodegram/resources/auth_methods.dart';
 
+
+
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
 
